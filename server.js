@@ -2,8 +2,10 @@ import express from 'express'
 import {engine} from 'express-handlebars'
 import 'dotenv/config'
 import path from 'path';
+import connectDB from './config/dbConnect.js';
 
 const app=express()
+connectDB()
 
 app.engine("hbs", engine({extname:".hbs"}));
 app.set("view engine", "hbs");
