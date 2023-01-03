@@ -3,6 +3,8 @@ import {engine} from 'express-handlebars'
 import 'dotenv/config'
 import path from 'path';
 import connectDB from './config/dbConnect.js';
+import UserRouter from "./routes/UserRouter.js"
+import AdminRouter from "./routes/AdminRouter.js"
 
 const app=express()
 connectDB()
@@ -18,6 +20,9 @@ app.use(express.json())
 app.get("/", (req, res)=>{
     res.render("home")
 })
+
+app.use("/user", UserRouter)
+app.use("/admin", AdminRouter)
 
 app.listen(5000, ()=>{
     console.log("Server Running on http://localhost:5000/")
