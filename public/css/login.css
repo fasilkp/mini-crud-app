@@ -1,0 +1,15 @@
+.login-input, .login-btn{
+    height: 50px;
+}
+.login-container{
+    border-radius: 20px;
+    width: 60%;
+    padding: 50px;
+    border: 1px solid rgba(128, 128, 128, 0.274);
+}
+.login-main h2{
+    margin-bottom: 50px;
+}
+.login-btn{
+    width: 100%;
+}

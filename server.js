@@ -11,17 +11,12 @@ connectDB()
 
 app.engine("hbs", engine({extname:".hbs"}));
 app.set("view engine", "hbs");
-
 const __dirname = path.resolve();
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.json())
 
-app.get("/", (req, res)=>{
-    res.render("home")
-})
-
-app.use("/user", UserRouter)
+app.use("/", UserRouter)
 app.use("/admin", AdminRouter)
 
 app.listen(5000, ()=>{
