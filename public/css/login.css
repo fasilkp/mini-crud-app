@@ -2,11 +2,18 @@
     height: 50px;
 }
 .login-input{
-    background-color: rgba(255, 255, 255, 0.178);
+    background-color: rgba(136, 136, 136, 0.178);
     border: none;
+    color: white;
+}
+.login-input:focus{
+    background-color: rgba(0, 0, 0, 0.322);
+    color: white;
 }
 .login-main{
-    background-image: url(https://img.freepik.com/free-photo/beautiful-view-greenery-bridge-forest-perfect-background_181624-17827.jpg?w=2000);
+    background-image: url(https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-2048x1536-8324.png);
+    background-size: cover;
+    background-position: center;
     height: 100vh;
 }
 .login-container{
@@ -14,8 +21,8 @@
     width: 40%;
     color: white;
     padding: 30px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0px 0px 10px 0px rgba(31, 31, 31,.75);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
     margin-top: -100px;
 }
 .login-main h2{
@@ -24,7 +31,7 @@
 }
 .login-btn{
     width: 100%;
-    background-color: #041106;
+    background-color: #020203;
     border: none;
 }
 .login-btn:hover{
