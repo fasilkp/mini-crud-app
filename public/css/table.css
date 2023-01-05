@@ -1,0 +1,39 @@
+.table-main{
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url(https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-2048x1536-8324.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navbar{
+    height: 60px;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+}
+.table-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    backdrop-filter: blur(20px);
+}
+.table-container table{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.397);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.table-container tr td, .table-container tr th{
+    padding: 10px;
+    padding-left: 20px;
+}
+
+.table-container thead tr th{
+    padding: 20px;
+}

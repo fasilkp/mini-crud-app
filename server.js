@@ -15,10 +15,11 @@ const __dirname = path.resolve();
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.json())
+app.use(express.urlencoded({extended:false})) 
 
 app.use("/", UserRouter) 
 app.use("/admin", AdminRouter)
 
 app.listen(5000, ()=>{
     console.log("Server Running on http://localhost:5000/")
-})
+}) 
