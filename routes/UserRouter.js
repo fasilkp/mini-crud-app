@@ -1,16 +1,25 @@
 import express from 'express'
 import UserModel from '../models/UserModel.js';
+import verifyUser from '../middlewares/verifyUser.js';
 
 const router=express.Router()
 
-router.get("/", async (req, res)=>{
-    res.send("user home")
+router.get("/",verifyUser, async (req, res)=>{
+    res.render("userHome")
 });
 router.get("/signup", (req, res)=>{
-    res.render("userSignup")
+    if(req.session.user){
+        res.redirect("/")
+    }else{
+        res.render("userSignup")
+    }
 });
 router.get("/login", (req, res)=>{
-    res.render("userLogin")
+    if(req.session.user){
+        res.redirect("/")
+    }else{
+        res.render("userLogin")
+    }
 });
 router.post("/signup", (req, res)=>{
     const {name, email, password}=req.body;
@@ -21,8 +30,10 @@ router.post("/signup", (req, res)=>{
             res.send("insert failed")
         }
         else {
-            console.log(data)
-            res.send("insert successfull")
+            req.session.user={
+                name
+            }
+            res.redirect("/")
         }
     })
 
@@ -30,14 +41,22 @@ router.post("/signup", (req, res)=>{
 router.post("/login", async (req, res)=>{
     const {email, password}=req.body;
     let user = await UserModel.findOne({email});
-    console.log(user)
     if(user){
         if(user.password===password){
+            req.session.user={
+                name:user.name
+            }
             res.redirect("/");
         }else{
-            res.send("login failed")
+            res.render("userLogin", {error:true})
         }
+    }else{
+        res.render("userLogin", {error:true})
     }
+})
+router.get("/logout", (req, res)=>{
+    req.session.user=null;
+    res.redirect("/login")
 })
 
 export default router;

@@ -9,6 +9,11 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control login-input" name="password" id="exampleInputPassword1">
         </div>
+        <div class="mb-3">
+            {{#if error}}
+            <b class="form-label text-danger">invalid Email or password</b>
+            {{/if}}
+        </div>
         <button type="submit" class="btn btn-primary login-btn">Submit</button>
     </form>
 </div>

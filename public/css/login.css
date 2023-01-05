@@ -38,3 +38,15 @@
 .login-btn:hover {
   background-color: #030100;
 }
+input:disabled{
+  background-color: #ffffff2c !important;
+  color: rgba(255, 255, 255, 0.301);
+}
+@media screen and (max-width:600px) {
+  .login-container{
+    width: 90%;
+  }
+  .loginForm{
+    margin-left: -50px;
+  }
+}

@@ -37,3 +37,12 @@
 .table-container thead tr th{
     padding: 20px;
 }
+@media screen and (max-width:600px) {
+    .table-container tr td, .table-container tr th{
+        font-size: .8rem;
+    }
+    .table-container button, .table-container a{
+        font-size: .8rem;
+        padding: 3px;
+    }
+}

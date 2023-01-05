@@ -1,0 +1,15 @@
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center login-main">
+    <form class="login-container" method="post" action="/admin/update-user">
+    <h2>Update User</h2>
+        <input class="form-control login-input" style="visibility: hidden; height:0px" type="text" value={{_id}} name="_id" aria-label="default input example">
+        <div class="mb-3">
+            <label for="" class="form-label">Name</label>
+            <input class="form-control login-input" type="text" name="name" value={{name}} aria-label="default input example">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control login-input" id="exampleInputEmail1" value={{email}} name="email" aria-describedby="emailHelp">
+        </div>
+        <button type="submit" class="btn btn-primary login-btn">Update</button>
+    </form>
+</div>

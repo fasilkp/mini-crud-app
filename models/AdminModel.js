@@ -13,6 +13,6 @@ const AdminSchema = new mongoose.Schema({
         required:true
     }
  });
-const UserModel = mongoose.model('admins', AdminSchema);
+const AdminModel = mongoose.model('admins', AdminSchema);
 
 export default AdminModel
