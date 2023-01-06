@@ -80,7 +80,6 @@ router.get("/delete-user/:id",verifyAdmin, (req, res) => {
 router.get("/update-user/:id",verifyAdmin, async (req, res) => {
   const _id = req.params.id;
   const user= await UserModel.findById(_id);
-  console.log(user)
   res.render("updateUser", { _id, name:user.name, email:user.email });
 });
 router.post("/update-user", (req, res) => {
@@ -90,9 +89,8 @@ router.post("/update-user", (req, res) => {
     { $set: { name, email } },
     function (err, docs) {
       if (err) {
-        console.log(err);
+        res.render("updateUser", {error:true})
       } else {
-        console.log("Updated User : ", docs);
         userUpdated=true;
         res.redirect("/admin/")
       }
@@ -105,5 +103,10 @@ router.get("/remove-alert", (req, res) => {
   userUpdated = false;
   res.redirect("/admin/");
 });
+
+router.get("/logout", (req, res)=>{
+  req.session.admin=null;
+  res.redirect("/admin/login")
+})
 
 export default router;

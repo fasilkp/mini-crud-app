@@ -21,7 +21,7 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    padding-top: 100px;
     backdrop-filter: blur(20px);
 }
 .table-container table{
