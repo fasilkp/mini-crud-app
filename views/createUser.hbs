@@ -1,6 +1,6 @@
 <div class="container-fluid d-flex flex-column justify-content-center align-items-center login-main">
-    <form class="login-container" method="post" action="/signup">
-    <h2>User SignUp</h2>
+    <form class="login-container" method="post" action="/admin/create-user">
+    <h2>Create User</h2>
         <div class="mb-3">
             <label for="" class="form-label">Name</label>
             <input class="form-control login-input" type="text" name="name" aria-label="default input example">
@@ -17,10 +17,12 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control login-input" name="password" id="exampleInputPassword1">
         </div>
+        <div class="mb-3">
+            {{#if error}}
+            <b class="form-label text-danger">Something Went Wrong</b>
+            {{/if}}
+        </div>
         <button type="submit" class="btn btn-primary login-btn">Submit</button>
-        <div class="container d-flex justify-content-center mt-3">
-        <a href="/login">Already Have Account? Login!</a>
-    </div>
     </form>
-    
+
 </div>

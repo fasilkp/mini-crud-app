@@ -1,10 +1,7 @@
 .table-main{
     width: 100vw;
     min-height: 100vh;
-    background-image: url(https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-2048x1536-8324.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
 }
 .navbar{
     height: 60px;
@@ -23,6 +20,7 @@
     justify-content: center;
     padding-top: 100px;
     backdrop-filter: blur(20px);
+    opacity: 90%;
 }
 .table-container table{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.397);
@@ -33,9 +31,19 @@
     padding: 10px;
     padding-left: 20px;
 }
+.search::placeholder{
+    color: grey;
+}
 
 .table-container thead tr th{
     padding: 20px;
+}
+body{
+    background-image: url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
 }
 @media screen and (max-width:600px) {
     .table-container tr td, .table-container tr th{

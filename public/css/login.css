@@ -12,7 +12,7 @@
   color: white;
 }
 .login-main {
-  background-image: url(https://4kwallpapers.com/images/wallpapers/dark-background-abstract-background-network-3d-background-2048x1536-8324.png);
+  background-image: url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -23,7 +23,7 @@
   color: white;
   padding: 30px;
   backdrop-filter: blur(10px);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 0px 10px 0px rgba(98, 98, 98, 0.435);
   margin-top: -100px;
 }
 .login-main h2 {
