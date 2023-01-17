@@ -13,6 +13,11 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control login-input" name="password" id="exampleInputPassword1">
         </div>
+        <div class="mb-3">
+            {{#if error}}
+            <b class="form-label text-danger">{{message}}</b>
+            {{/if}}
+        </div>
         <button type="submit" class="btn btn-primary login-btn">Submit</button>
         <div class="container d-flex justify-content-center mt-3">
         <a href="/admin/login">Already Have Account? Login!</a>

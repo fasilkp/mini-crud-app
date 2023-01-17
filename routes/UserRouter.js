@@ -25,16 +25,24 @@ router.get("/login", (req, res)=>{
 });
 router.post("/signup", (req, res)=>{
     const {name, email, password, mobile}=req.body;
+    if(mobile.toString().length!=10){
+        return res.render("userSignup",{numberNotValid:true, message:"Mobile number must be 10 digits"})    
+    }
+    if(name=="" || email=="" || password=="")
+    {
+        return res.render("userSignup",{error:true, message:"Please enter all fields"})
+    }
     var hashPassword = bcrypt.hashSync(password, salt);
     let user = new UserModel({name, email, password:hashPassword, mobile})
     user.save((err, data)=>{
         if(err) {
             console.log(err)
-            res.send("insert failed")
+            res.render("userSignup",{error:true, message:"Something went wrong"})
         }
         else {
             req.session.user={
-                name
+                name,
+                id:user._id
             }
             res.redirect("/")
         }
@@ -47,7 +55,8 @@ router.post("/login", async (req, res)=>{
     if(user){
         if(bcrypt.compareSync(password, user.password)){
             req.session.user={
-                name:user.name
+                name:user.name,
+                id:user._id
             }
             res.redirect("/");
         }else{
@@ -60,6 +69,10 @@ router.post("/login", async (req, res)=>{
 router.get("/logout", (req, res)=>{
     req.session.user=null;
     res.redirect("/login")
+})
+
+router.get("/check/:id", (req,res)=>{
+    res.send(req.params.id)
 })
 
 export default router;

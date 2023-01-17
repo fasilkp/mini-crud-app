@@ -14,12 +14,14 @@ app.use(session({
     resave:false,
     saveUninitialized:true
 }))
+
 app.engine("hbs", engine({extname:".hbs"}));
 app.set("view engine", "hbs");
+app.set("name", "sanooj");
 const __dirname = path.resolve();
 
 app.use(function(req, res, next) {
-    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Cache-Control', 'no-cache, no-store, must-revalidate');
     next();
 });
 
@@ -29,7 +31,11 @@ app.use(express.urlencoded({extended:true}))
 
 app.use("/", UserRouter) 
 app.use("/admin", AdminRouter)
-
+ 
+app.get("/check/", (req, res)=>{   
+    res.send(req.query)
+})
+ 
 app.listen(5000, ()=>{
     console.log("Server Running on http://localhost:5000/")
 }) 

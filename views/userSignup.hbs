@@ -10,12 +10,20 @@
             <input type="email" class="form-control login-input" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-            <label for="exampleInputMobile" class="form-label">Mobile</label>
-            <input type="number" class="form-control login-input"  name="mobile" >
+            <label for="exampleInputMobile" class="form-label" >Mobile</label>
+            <input type="number" class="form-control login-input"  name="mobile" >  
+            {{#if numberNotValid}} 
+            <div class="form-text text-danger">{{message}}</div>
+            {{/if}}
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
             <input type="password" class="form-control login-input" name="password" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+            {{#if error}} 
+            <div class="form-text text-danger">{{message}}</div>
+            {{/if}}
         </div>
         <button type="submit" class="btn btn-primary login-btn">Submit</button>
         <div class="container d-flex justify-content-center mt-3">
